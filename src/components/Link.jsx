@@ -1,7 +1,7 @@
 function Link({ link }) {
   return (
     <>
-      <a href={link.url} target="_blank" rel="noopener noreferrer">
+      <a href={link.url} target="_blank">
         <div className="mt-6 min-w-[24rem] h-10 max-w-[40rem] flex justify-between items-center bg-[#ffffff] border rounded-md drop-shadow-lg hover:scale-105 transition-all duration-300">
           <img
             className="border rounded-lg size-8 self-center mx-1"
