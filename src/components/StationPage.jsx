@@ -18,7 +18,7 @@ function StationPage() {
     const fetchStation = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/api/v1/station/s/${url}`
+          `https://linkstationbackend.onrender.com/api/v1/station/s/${url}`
         );
         setData(response.data.data);
         setLoading(false);
