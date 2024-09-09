@@ -2,7 +2,7 @@ function Link({ link }) {
   const url = link.url.startsWith("http") ? link.url : `http://${link.url}`;
   const incrementClicks = async () => {
     // Increment the clicks of the link in backend
-    await fetch(
+    fetch(
       `https://linkstationbackend.onrender.com/api/v1/link/l/${link._id}`
     );
     window.location.href = url;
