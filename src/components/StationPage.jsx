@@ -49,7 +49,7 @@ function StationPage() {
     style={{ backgroundImage: `url(${data.station.image})` }}>
       <div className="h-screen backdrop-blur-xl">
         <title>{data.station.title}</title>
-        <TopBar />
+        <TopBar station = {data.station} />
         <StationDetails station={data.station} />
         <Links links={data.links} />
         <Socials station={data.station} />

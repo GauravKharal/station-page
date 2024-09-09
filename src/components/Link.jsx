@@ -1,9 +1,9 @@
 function Link({ link }) {
   const url = link.url.startsWith("http") ? link.url : `http://${link.url}`;
-  const incrementClicks = async () => {
+  const incrementClicks =  () => {
     // Increment the clicks of the link in backend
     fetch(
-      `https://linkstationbackend.onrender.com/api/v1/link/l/${link._id}`
+      `https://linkstationbackend.onrender.com/api/v1/link/l/click/${link._id}`
     );
     window.location.href = url;
   };
@@ -28,6 +28,7 @@ function Link({ link }) {
               height="20"
               src="https://img.icons8.com/fluency-systems-regular/50/copy--v1.png"
               alt="Copy Link"
+              className="invisible"
             />
           </button>
         </div>
