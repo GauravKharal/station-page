@@ -1,8 +1,15 @@
 function Link({ link }) {
-  const url = link.url.startsWith('http') ? link.url : `http://${link.url}`;
+  const url = link.url.startsWith("http") ? link.url : `http://${link.url}`;
+  const incrementClicks = async () => {
+    // Increment the clicks of the link in backend
+    await fetch(
+      `https://linkstationbackend.onrender.com/api/v1/link/l/${link._id}`
+    );
+    window.location.href = url;
+  };
   return (
     <>
-      <a href= {url} target="_blank">
+      <a onClick={incrementClicks} target="_blank">
         <div className="mt-6 min-w-[24rem] h-10 max-w-[40rem] flex justify-between items-center bg-[#ffffff] border rounded-md drop-shadow-lg hover:scale-105 transition-all duration-300">
           <img
             className="border rounded-lg size-8 self-center mx-1"
@@ -12,7 +19,10 @@ function Link({ link }) {
           <h1 className="text-sm space-mono-regular self-center">
             {link.title}
           </h1>
-          <button className="mx-1 self-center" onClick={() => navigator.clipboard.writeText(link.url)}>
+          <button
+            className="mx-1 self-center"
+            onClick={() => navigator.clipboard.writeText(link.url)}
+          >
             <img
               width="20"
               height="20"
